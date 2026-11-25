@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Municipal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+    <main class="login-card">
+        <header class="login-header">
+            <img src="img/imagen1.png">
+            <h1>BIBLIOTECA <span>Municipal</span></h1>
+            <p class="muted">Sistema de gestión bibliotecaria</p>
+        </header>
+
+        <section aria-label="Formulario de acceso">
+            <div id="formularioAcceso">
+                <div class="field">
+                    <label for="usuario">Usuario</label>
+                    <input class="input" id="usuario" name="username"
+                           type="text" autocomplete="username"
+                           placeholder="Ingrese su usuario" required>
+                </div>
+
+                <div class="field">
+                    <label for="contrasena">Contraseña</label>
+                    <input class="input" id="contrasena" name="password"
+                           type="password" autocomplete="current-password"
+                           placeholder="Ingrese su contraseña" required>
+                </div>
+
+                <button class="btn primary full" type="button" onclick="iniciarSesion()">
+                    Ingresar al sistema
+                </button>
+                <p id="mensajeError" class="error" role="alert"></p>
+            </div>
+        </section>
+
+        <footer class="login-footer">
+            <small>Usuario: admin · Contraseña: Admin123</small>
+        </footer>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

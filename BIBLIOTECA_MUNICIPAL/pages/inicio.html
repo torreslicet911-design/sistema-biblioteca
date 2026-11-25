@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Biblioteca Municipal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="inicio">
+    <div class="app-layout">
+        <aside class="barra-lateral" aria-label="Menú principal">
+            <a class="brand" href="inicio.html">
+                <img src="../img/logo.svg" alt="Logotipo de Biblioteca PRO">
+                <span>BIBLIOTECA <strong>Municipal</strong></span>
+            </a>
+
+            <nav class="navegacion-lateral">
+                <p class="etiqueta-menu">MENÚ PRINCIPAL</p>
+                <ul class="lista-menu">
+                    <li>
+                        <a class="enlace-menu" data-page="inicio" href="inicio.html">
+                            <span class="icono-menu">▦</span>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="enlace-menu" data-page="libros" href="libros.html">
+                            <span class="icono-menu">▤</span>
+                            <span>Libros</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="enlace-menu" data-page="usuarios" href="usuarios.html">
+                            <span class="icono-menu">♙</span>
+                            <span>Usuarios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="enlace-menu" data-page="prestamos" href="prestamos.html">
+                            <span class="icono-menu">⇄</span>
+                            <span>Préstamos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="enlace-menu" data-page="devoluciones" href="devoluciones.html">
+                            <span class="icono-menu">↩</span>
+                            <span>Devoluciones</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="enlace-menu" data-page="categorias" href="categorias.html">
+                            <span class="icono-menu">▧</span>
+                            <span>Categorías</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="enlace-menu" data-page="reportes" href="reportes.html">
+                            <span class="icono-menu">▥</span>
+                            <span>Reportes</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="pie-lateral">
+                <ul class="lista-menu">
+                    <li>
+                        <a class="enlace-menu" data-page="configuracion" href="configuracion.html">
+                            <span class="icono-menu">⚙</span>
+                            <span>Configuración</span>
+                        </a>
+                    </li>
+                    <li>
+                        <button class="enlace-menu logout-button" id="cerrarSesion" type="button">
+                            <span class="icono-menu">↪</span>
+                            <span>Cerrar sesión</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="fondo-menu-movil" id="fondoMenu"></div>
+
+        <div class="columna-principal">
+            <header class="barra-superior">
+                <div class="inicio-barra-superior">
+                    <button class="alternar-menu" id="alternarMenu" type="button" onclick="document.querySelector('.barra-lateral').classList.toggle('open')"
+                            aria-label="Abrir o cerrar menú">☰</button>
+                    <h1 id="tituloPagina">Inicio</h1>
+                </div>
+                <div class="usuario-identificado">
+                    <span class="avatar-usuario">👤</span>
+                    <span class="nombre-usuario">Administrador</span>
+                </div>
+            </header>
+
+            <main class="contenido-pagina" id="contenidoPrincipal">
+                <section class="introduccion-pagina">
+                    <p class="eyebrow">Biblioteca Municipal</p>
+                    <h2 class="titulo-pagina">Inicio</h2>
+                    <p class="subtitle">Resumen general de la biblioteca.</p>
+                </section>
+                <section class="stats-grid">
+<article class="stat-card"><div class="stat-head">
+    <span class="stat-label">Libros registrados</span>
+    <span class="stat-icon">📚</span>
+</div>
+<p class="stat-number" id="totalLibros">0</p>
+</article>
+<article class="stat-card">
+    <div class="stat-head">
+        <span class="stat-label">Usuarios registrados</span>
+        <span class="stat-icon">👥</span>
+    </div>
+    <p class="stat-number" id="totalUsuarios">0</p>
+</article>
+<article class="stat-card">
+    <div class="stat-head">
+        <span class="stat-label">Préstamos activos</span>
+        <span class="stat-icon">📖</span>
+    </div>
+    <p class="stat-number" id="totalPrestamos">0</p>
+</article>
+<article class="stat-card">
+    <div class="stat-head">
+        <span class="stat-label">Devoluciones realizadas</span>
+        <span class="stat-icon">↩️</span>
+    </div>
+    <p class="stat-number" id="totalDevoluciones">0</p>
+</article>
+</section>
+<section class="panel">
+    <div class="section-head">
+        <h3>Préstamos recientes</h3>
+        <a class="btn secondary" href="prestamos.html">Ver préstamos</a>
+    </div>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Lector</th>
+                    <th>Libro</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody id="tablaPrestamosRecientes"></tbody>
+        </table>
+    </div>
+</section>
+<section class="panel">
+    <div class="section-head">
+        <h3>Accesos rápidos</h3>
+        <div class="quick-actions">
+            <a class="btn primary" href="libros.html">+ Registrar libro</a>
+            <a class="btn secondary" href="usuarios.html">+ Registrar lector</a>
+            <a class="btn secondary" href="prestamos.html">+ Nuevo préstamo</a>
+        </div>
+    </div>
+</section>
+            </main>
+
+            <footer class="pie-pagina">
+                <p>Biblioteca Municipal · Sistema de gestión bibliotecaria</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
